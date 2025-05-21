@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction History for <span style="color: #3498db;">{{ session.username }}</span></h2>
+        {% if history %}
+            <ul>
+                {% for review, result in history %}
+                    <li><strong>{{ result }}</strong> - {{ review }}</li>
+                {% endfor %}
+            </ul>
+            <br>
+            <a href="/download_pdf">📄 Download History as PDF</a>
+        {% else %}
+            <p class="error">No history found.</p>
+        {% endif %}
+        <br><br>
+        <a href="/predict">Back to Predict</a> |
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>

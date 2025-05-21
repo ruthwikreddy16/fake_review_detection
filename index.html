@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Review Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Fake Review Detector</h2>
+        <form method="POST">
+            <textarea name="review" placeholder="Enter your review..." rows="6" required></textarea><br>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+            <div class="prediction">Prediction: {{ prediction }}</div>
+        {% endif %}
+        <br>
+        <a href="/history">View History</a> |
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
